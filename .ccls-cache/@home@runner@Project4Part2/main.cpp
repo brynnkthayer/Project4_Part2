@@ -6,23 +6,27 @@ using namespace std;
 
 int main() {
 
+  // Array used to hold the ordinal suffixes.
   string ordinal[] = {"st", "nd", "rd", "th"};
 
+  // The max value.
   int N;
 
   cout << "Enter an integer: ";
   cin >> N;
 
+  // Begins with 1, adds 1 and continues until the max value is reached.
   for (int i = 1; i <= N; i = i + 1) {
 
     int num = i%100;
 
-  // 4th through 20th are the exception to all other rules
+  // This range contains exceptions to the other rules, therefore they are all "th."
     if (num > 3 && num < 21)
     cout << i << ordinal[3] << " Hello" << endl;
 
     else {
 
+      // Determines which suffix depending on the digit the number ends in.
     if (num%10 == 1) 
       cout << i << ordinal[0] << " Hello" << endl;
 
